@@ -5,54 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <link rel="stylesheet" href="estilo.css">
-
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Game</title>
 
     <script>
-       function iniciarJogo(){
-           var nivel = document.getElementById('nivel').value
+        window.onload = () => 
+        { 
+        let levels = ["Normal", "Difícil", "chucknorris"],
+             select = document.getElementById("nivel");
 
-           if(nivel === ''){
-               alert('Selecione um nível para iniciar o jogo')
-               return false
+            for(let i in levels)
+            {
+                options = document.createElement("option");
+                options.appendChild(document.createTextNode(levels[i]));
+                options.value = i;
+                select.appendChild(options);
+            }
+        }
+       function iniciarJogo()
+       {
+           var nivel = document.getElementById('nivel').value;
+
+           if(nivel === '')
+           {
+               alert('Selecione um nível para iniciar o jogo');
+               return false;
            }
-
-           window.location.href = 'app.html?' + nivel
-           
+           window.location.href = 'app.html?' + nivel;
        }
     </script>
     
 </head>
 <body>
-    <div class="conteiner">
-        <div class="row">
-            <div class="col">
-                <div class="d-flex justify-content-center">
-                <img src="imagens/game.png">
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col">
-                <div class="d-flex justify-content-center">
-                    <div class="mb-2">
-                        <select class="form-control" id="nivel">
-                            <option value="">--selecionar o nivel--</option>
-                            <option value="normal">Normal</option>
-                            <option value="dificil">Difícil</option>
-                            <option value="chucknorris">Chuck Norris</option>
-                        </select>
+    <div class="boxGame">
+        <div class="conteiner">
+            <div class="row">
+                <div class="col">
+                    <div class="justify-content-center child">
+                        <img src="imagens/game.png">
+                    <form action="#">
+                        <div class="select margemT">
+                            <select class="form-control" id="nivel">
+                                <option value="">--selecionar o nivel--</option>
+                            </select>
+                       </div>
+                        <div class="button margemT">
+                            <button type="button" class="btn btn-danger btn-lg" onclick="iniciarJogo()">Iniciar</button>
+                        </div>
+                    </form>
                     </div>
-                </div>
-            </div>
-        </div>            
-
-        <div class="row">
-            <div class="col">
-                <div class="d-flex justify-content-center">
-               <button type="button" class="btn btn-danger btn-lg" onclick="iniciarJogo()">Iniciar</button>
                 </div>
             </div>
         </div>
