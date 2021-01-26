@@ -9,8 +9,20 @@
     <title>Game</title>
 
     <script>
+
+        function winSize()
+        {
+            let GetWin = window.innerHeight;
+            document.getElementsByClassName("boxGame")[0].style.height = GetWin+"px";
+        }
+        
         window.onload = () => 
-        { 
+        {
+        winSize();
+        window.addEventListener('resize', () => {
+            winSize();
+        });
+
         let levels = ["Normal", "Difícil", "chucknorris"],
              select = document.getElementById("nivel");
 
