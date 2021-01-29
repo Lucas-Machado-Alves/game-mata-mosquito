@@ -1,0 +1,44 @@
+.popoup
+{
+    background-color: white;
+    color: black;
+    max-width: 344px;
+    z-index: 99999;
+    border-radius: 7px;
+    padding: 10px;
+    position: fixed;
+}
+.popoup .bt
+{
+    height: 30px;
+    line-height: 0px;
+    background-color: chocolate;
+    font-size: 15px;
+}
+.popoup .close 
+{
+    float: right;
+    font-size: 16px;
+    padding: 4px 10px 0px 0px;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: deeppink;
+    font-family: monospace;
+}
+.popoup .text
+{
+    padding: 15px;
+    text-align: center;
+}
+.black
+{
+    background-color: #000000a1;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 99998;
+}
